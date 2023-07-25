@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de la Predicción</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('../static/7506.jpg');
+            background-size: cover;
+            background-size: 200px 100px; /* Ancho 200px, alto 100px */
+            background-size: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+            background-size: contain; /* Ajusta la imagen para que se ajuste completamente dentro del contenedor */
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .table-container {
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #555;
+        }
+        tr:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <h1>Resultados de la Predicción</h1>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Overall</th>
+                <th>Overall Predicho</th>
+                <!-- Agrega más columnas aquí si deseas mostrar más atributos -->
+            </tr>
+            {% for player in results %}
+            <tr>
+                <td>{{ player.Name }}</td>
+                <td>{{ player.Overall }}</td>
+                <td>{{ player.Overall_Predicho }}</td>
+                <!-- Agrega más columnas aquí si deseas mostrar más atributos -->
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
