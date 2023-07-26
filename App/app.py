@@ -118,7 +118,7 @@ def predecir_overall():
     df = limpiar_datos(df)
 
     # Realizar las predicciones para el DataFrame limpiado
-    predictions = model.predict(df.drop(['Name','Overall'], axis=1)) 
+    predictions = model.predict(df.drop(['Name','Overall','Clasificación Habilidad'], axis=1)) 
 
     # Redondear las predicciones a dos decimales
     predictions = [round(pred, 2) for pred in predictions]
